@@ -85,10 +85,10 @@ const closeStoryBtn = document.getElementById('close-story-btn');
 
 // --- ЗАГРУЗКА АУДИОАССЕТОВ ---
 // Замените названия файлов в кавычках на ваши реальные файлы из папки audio
-const soundMine = new Audio('audio/hit_mine.WAV');   // Удар кирки
-const soundSword = new Audio('audio/hit_sword.WAV'); // Удар мечом
-const soundCoin = new Audio('audio/buy_shop.WAV');   // Звук покупки/продажи
-const soundMonsterDie = new Audio('audio/monster_die.WAV'); // Звук гибели врага
+const soundMine = new Audio('audio/hit_mine.wav');   // Удар кирки
+const soundSword = new Audio('audio/hit_sword.wav'); // Удар мечом
+const soundCoin = new Audio('audio/buy_shop.wav');   // Звук покупки/продажи
+const soundMonsterDie = new Audio('audio/monster_die.wav'); // Звук гибели врага
 
 
 
@@ -310,10 +310,6 @@ mainActionBtn.addEventListener('click', () => {
 // --- ИСПРАВЛЕНО: ЗВУКИ БОЕВКИ И ВХОДА В БОЙ ---
 farmOreBtn.addEventListener('click', () => {
     if (gameState.readyForCombat && !gameState.isCombatMode) {
-        // Проигрываем звук интерфейса или монетки при начале боя
-        soundCoin.currentTime = 0;
-        soundCoin.play();
-
         // Активируем режим боя по нажатию снизу
         gameState.readyForCombat = false;
         gameState.isCombatMode = true;

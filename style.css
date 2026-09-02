@@ -241,3 +241,54 @@ h4 {
 .danger-btn:hover {
     background-color: rgba(255, 71, 87, 0.2);
 }
+/* --- СЮЖЕТНЫЕ ОКНА: ИСПРАВЛЕННЫЙ ВАРИАНТ --- */
+
+/* Фон-подложка, затемняющий игру */
+.modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none; /* Скрыто на старте, JS переключит на flex */
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Само белое/темное окошко по центру (Вы вернули этот блок!) */
+.modal-content {
+    background-color: #2f3640;
+    padding: 25px; 
+    border-radius: 16px;
+    width: 85%; 
+    max-width: 360px; 
+    text-align: center;
+    border: 2px solid #eccc68; /* Красивая золотая рамочка */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Имя говорящего персонажа */
+.modal-content h3 { 
+    margin: 0 0 12px 0; 
+    color: #45aaf2; 
+    font-size: 18px;
+}
+
+/* Текст реплики */
+.modal-content p { 
+    font-size: 14px; 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    color: #ffffff; /* Белый читаемый текст */
+}
+/* Делаем текст описания действий под главной кнопкой белым */
+#action-description {
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 12px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Лёгкая тень для контраста */
+}
+
