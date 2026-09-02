@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/background_surface.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Главный контейнер стал полупрозрачным "стеклянным" */
+.game-container {
+    background-color: rgba(47, 54, 64, 0.85); /* Приятный глубокий цвет с прозрачностью */
+    backdrop-filter: blur(8px); /* Размытие фона за игрой для стиля */
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    font-size: 18px;
+    color: #f1c40f; /* Яркое золото для главной цели */
+    margin: 0 0 15px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Панель прогресса — убрали черный текст, сделали контрастным */
+.progress-status {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.progress-status p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #ffffff; /* Белый читаемый текст */
+    font-weight: 500;
+}
+
+.checkpoint-title {
+    color: #ff7675 !important; /* Яркий пастельный красный для монстра */
+    font-weight: bold;
+}
+
+/* Панель ресурсов */
+.resources-panel {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.res-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+}
+
+.gps-text {
+    font-size: 13px;
+    color: #dcdde1;
+    margin: 0 0 20px 0;
+}
+
+/* Главная круглая кнопка */
+.main-target {
+    border: none;
+    color: white;
+    font-size: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.05s, background-color 0.2s;
+    background-color: #9c88ff;
+    box-shadow: 0 6px 0 #786fa6, 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.main-target:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* Шкала здоровья монстра */
+.hp-bar-container {
+    width: 80%;
+    background-color: #1e272e;
+    height: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+.hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4cd137, #44bd32);
+    width: 100%;
+    transition: width 0.1s ease;
+}
+
+/* Город / Поверхность */
+.surface-town {
+    margin-top: 25px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.surface-town h3 {
+    margin: 0 0 15px 0;
+    color: #45aaf2;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+h4 {
+    margin: 10px 0 8px 0;
+    font-size: 13px;
+    color: #dcdde1;
+}
+
+/* Кнопки продаж */
+.action-btn {
+    width: 100%;
+    background-color: #fa8231;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #d35400;
+    transition: background 0.2s, transform 0.1s;
+}
+.action-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Элементы магазина */
+.shop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.item-info span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.item-info p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #dcdde1;
+}
+
+/* Кнопки купить */
+.buy-btn {
+    background-color: #2ed573;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 0 #26de81;
+}
+.buy-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+.buy-btn:disabled {
+    background-color: #718093;
+    box-shadow: none;
+    color: #dcdde1;
+    cursor: not-allowed;
+}
+
+/* Нижняя кнопка для боя / гринда */
+.farm-btn {
+    border: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    transition: background 0.2s, transform 0.1s;
+}
+.farm-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.danger-btn {
+    background-color: transparent;
+    border: 1px solid #ff4757;
+    color: #ff4757;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+.danger-btn:hover {
+    background-color: rgba(255, 71, 87, 0.2);
+}

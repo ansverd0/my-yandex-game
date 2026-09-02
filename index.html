@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасение Розы: Шахта Надежды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h2>Цель: Добыть Кристалл Жизни для жены</h2>
+            <div class="progress-status">
+                <p>Текущая глубина: <span id="depth-count">0</span> метров</p>
+                <p class="checkpoint-title">Чекпоинт: <span id="checkpoint-id">1</span>/50 (<span id="monster-name">Путь свободен</span>)</p>
+            </div>
+                        <!-- ИСПРАВЛЕНО: Заменяем текстовые эмодзи ресурсов на настоящие спрайты -->
+            <div class="resources-panel">
+                <span>Руда: <span id="ore-count">0</span> <img src="images/icon_ore.png" alt="Руда" class="res-icon"></span> | 
+                <span>Монеты: <span id="gold-count">0</span> <img src="images/icon_gold.png" alt="Золото" class="res-icon"></span>
+            </div>
+            <div class="stats-panel" style="font-size: 12px; margin-bottom: 10px; color: #a4b0be;">
+                Сила копания: <span id="stat-mine-power">1</span> ⛏️ | Сила атаки: <span id="stat-hit-power">1</span> ⚔️
+            </div>
+            <p class="gps-text">Авто-добыча руды: <span id="gps-count">0</span> /сек</p>
+        </header>
+
+        <main class="action-zone">
+            <button id="main-action-btn" class="main-target mining-mode">
+                <span id="target-emoji">⛏️</span>
+                <div id="target-hp-bar" class="hp-bar-container" style="display:none;">
+                    <div id="target-hp-fill" class="hp-fill"></div>
+                </div>
+            </button>
+            <p id="action-description">Вы копаете шахту...</p>
+            <button id="farm-ore-btn" class="farm-btn" style="display: none;">⛏️ Безопасно копать руду</button>
+        </main>
+
+        <section class="surface-town">
+            <h3>Рынок на Поверхности</h3>
+            
+            <div class="merchant-block">
+                <h4>Скупщик ресурсов</h4>
+                <button id="sell-ore-btn" class="action-btn">Продать всю руду (по 1 🪙)</button>
+            </div>
+
+            <div class="shop-block">
+                <h4>Магазин снаряжения</h4>
+                <div class="shop-item">
+                    <div class="item-info"><span id="pickaxe-name">Каменная кирка</span><p>Цена: <span id="pickaxe-cost">15</span></p></div>
+                    <button id="buy-pickaxe-btn" class="buy-btn">Купить</button>
+                </div>
+                <div class="shop-item">
+                    <div class="item-info"><span id="sword-name">Ржавый клинок</span><p>Цена: <span id="sword-cost">25</span></p></div>
+                    <button id="buy-sword-btn" class="buy-btn">Купить</button>
+                </div>
+                <div class="shop-item">
+                    <div class="item-info"><span>Нанять Шахтера-работягу</span><p>Цена: <span id="miner-cost">30</span> | Всего: <span id="miner-count">0</span></p></div>
+                    <button id="buy-miner-btn" class="buy-btn">Нанять</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <button id="reset-btn" class="danger-btn">Начать историю заново</button>
+        </footer>
+    </div>
+
+    <!-- ОКНО ДИАЛОГОВ (Оно должно быть скрыто через встроенный стиль по умолчанию) -->
+    <div id="story-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3 id="story-speaker">Староста деревни</h3>
+            <p id="story-text">Текст диалога...</p>
+            <button id="close-story-btn" class="action-btn" style="background-color: #2ecc71; margin-top: 10px;">Понятно!</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
